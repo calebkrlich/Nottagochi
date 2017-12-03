@@ -8,7 +8,7 @@ class Battle:
         self._fighterOne = fighterOne
         self._fighterTwo = fighterTwo
 
-    def fighterOneMove(self,move):
+    def fighterMove(self,move):
         if(move == "ATTACK"):
             if(self._fighterTwo.getDefencePower() > self._fighterOne.getAttackPower()):
                 self._fighterTwo.setHealth((self._fighterTwo.getDefencePower() - (self._fighterOne.getAttackPower() / 2)))
@@ -19,6 +19,3 @@ class Battle:
 
         if(move == "TEST"):
             print(self._fighterOne.getAttackPower())
-
-    def currentBattle(self):
-        print()

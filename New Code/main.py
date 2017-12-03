@@ -1,9 +1,19 @@
 from Character import Character
 from Battle import Battle
+from appJar import gui
 
-test = Character(2,3,4,5)
-test2 = Character(3,2,5,6)
+def press(button):
+    if button == "Quit":
+        app.stop()
+    else:
+        usr = app.getEntry("Username")
+        pwd = app.getEntry("Password")
+        print("User:", usr, "Pass:", pwd)
 
-fightTest = Battle(test, test2)
+app = gui("Nottagochi","320x240")
+app.addLabelEntry("Username")
+app.addLabelSecretEntry("Password")
 
-fightTest.fighterOneMove('ATTACK')
+app.addButtons(["Login", "Quit"], press)
+app.setFocus("Username")
+app.go()
